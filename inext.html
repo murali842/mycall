@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Math Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="calculator-container">
+        <h1>Advanced Calculator</h1>
+        <p class="subtitle">Enter numbers and choose an operation</p>
+
+        <form id="calcForm" onsubmit="event.preventDefault();">
+            <div class="input-group">
+                <label for="num1">Number 1</label>
+                <input type="number" id="num1" placeholder="e.g. 8" required>
+            </div>
+
+            <div class="input-group" id="secondInputGroup">
+                <label for="num2">Number 2</label>
+                <input type="number" id="num2" placeholder="e.g. 2">
+                <small class="note">*Not needed for Square Root or Cube Root</small>
+            </div>
+
+            <div class="operations-grid">
+                <button type="button" class="btn btn-basic" onclick="handleCalculation('add')">Add (+)</button>
+                <button type="button" class="btn btn-basic" onclick="handleCalculation('subtract')">Subtract (-)</button>
+                <button type="button" class="btn btn-basic" onclick="handleCalculation('multiply')">Multiply (*)</button>
+                <button type="button" class="btn btn-basic" onclick="handleCalculation('divide')">Divide (/)</button>
+                
+                <button type="button" class="btn btn-advanced" onclick="handleCalculation('sqrt')">Square Root (√x)</button>
+                <button type="button" class="btn btn-advanced" onclick="handleCalculation('cbrt')">Cube Root (∛x)</button>
+                <button type="button" class="btn btn-advanced" onclick="handleCalculation('power')">Power (x^y)</button>
+            </div>
+        </form>
+
+        <div class="result-container">
+            <h2>Result</h2>
+            <div id="outputDisplay" class="output-blank">Waiting for operation...</div>
+        </div>
+    </main>
+
+    <script src="scrpit.js"></script>
+</body>
+</html>
